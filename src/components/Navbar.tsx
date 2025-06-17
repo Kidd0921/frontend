@@ -1,7 +1,5 @@
 import SearchBar from "./SearchBar";
-import Button from "@/components/Button";
-import { ShoppingCart, User } from 'lucide-react';
-import Link from "next/link";
+import NavIcons from "./NavIcons";
 
 const Navbar = () => {
   return (
@@ -9,10 +7,7 @@ const Navbar = () => {
       {/* MOBILE */}
       <div className="h-full flex items-center justify-between gap-8 md:hidden">
         <SearchBar/>
-        <Button
-          icon={<ShoppingCart className="h-5 w-5 text-current" />}
-          className="text-teal-200 border-teal-400 hover:text-white hover:border-white"
-        />            
+        <NavIcons/>         
       </div>
 
       {/* BIGGER SCREENS */}
@@ -34,21 +29,7 @@ const Navbar = () => {
           <SearchBar/>
         </div>
         
-
-        <div className="flex items-center justify-between gap-8">
-          <Button
-            icon={<ShoppingCart className="h-5 w-5 text-current" />}
-            className="text-teal-200 border-teal-400 hover:text-white hover:border-white"
-          />  
-
-          <Button
-            icon={<User className="h-5 w-5 text-current" />}
-            className="text-teal-200 border-teal-400 hover:text-white hover:border-white"
-          />        
-        </div>
-
-
-
+        <NavIcons/>
       </div>
 
     </nav>    
