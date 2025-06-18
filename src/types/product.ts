@@ -6,5 +6,5 @@ export interface Product {
   image: string
   category: string
   rating: number
-  inStock: boolean
+  quantity: number
 }

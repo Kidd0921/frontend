@@ -19,7 +19,7 @@ const  products: Product[] = [
     image: '/product/watch.jpeg',
     category: 'Clothing',
     rating: 4.5,
-    inStock: true,
+    quantity: 2,
   },
   {
     id: '2',
@@ -29,7 +29,7 @@ const  products: Product[] = [
     image: '/product/watch.jpeg',
     category: 'Clothing',
     rating: 4.2,
-    inStock: true,
+    quantity: 20,
   },
   {
     id: '3',
@@ -39,7 +39,7 @@ const  products: Product[] = [
     image: '/product/watch.jpeg',
     category: 'Footwear',
     rating: 4.8,
-    inStock: false,
+    quantity: 100,
   },
   {
     id: '4',
@@ -49,7 +49,7 @@ const  products: Product[] = [
     image: '/product/watch.jpeg',
     category: 'Electronics',
     rating: 4.6,
-    inStock: true,
+    quantity: 3,
   },
   {
     id: '5',
@@ -59,7 +59,7 @@ const  products: Product[] = [
     image: '/product/watch.jpeg',
     category: 'Electronics',
     rating: 2.6,
-    inStock: true,
+    quantity: 5,
   },
 ]
 const SearchPage = () => {
