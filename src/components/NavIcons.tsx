@@ -44,7 +44,7 @@ const NavIcons = ({ setIsFilterOpen }: NavIconsProps) => {
           showFilter && (
           <Button
             icon={<Filter className="h-5 w-5 text-current" />}
-            className="md:hidden text-teal-200 border-teal-400 hover:text-white hover:border-white"
+            className="lg:hidden text-teal-200 border-teal-400 hover:text-white hover:border-white"
             onClick={() => {setIsFilterOpen( (prev) => !prev)}}
           />
           )

@@ -1,6 +1,10 @@
+'use client';
+
+import { useState } from "react";
 import { Product } from "@/types/product";
 import ProductListing from "@/components/products/ProductListing";
-import FilterMenu from "@/components/Filter/FilterMenu";
+import { PanelLeftOpen, PanelLeftClose } from 'lucide-react';
+import FilterSideBar from "@/components/Filter/FilterSideBar";
 
 const PRODUCT_PER_PAGE = 8;
 const  products: Product[] = [
@@ -56,10 +60,29 @@ const  products: Product[] = [
   },
 ]
 const ListPage = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
   return (
-    <>
-      <ProductListing products={products}/>
-    </>
+    <div
+      className="flex"
+    >
+      {/* Toggle Button */}
+      <button
+        onClick={() => setSidebarOpen(prev => !prev)}
+        className={`hidden lg:flex flex-col z-50 py-5 px-3 ${sidebarOpen ? "bg-teal-700" : "bg-teal-600"} text-white ${sidebarOpen ? "hover:bg-teal-800" : "hover:bg-teal-700"} transition`}
+      >
+        {sidebarOpen ? <PanelLeftClose/> : <PanelLeftOpen/>}
+      </button>
+
+      {sidebarOpen && (
+        <div className="hidden lg:block bg-teal-600 ">
+          <FilterSideBar />
+        </div>
+      )}
+
+      <ProductListing products={products} />
+ 
+    </div>
 
   )
 }

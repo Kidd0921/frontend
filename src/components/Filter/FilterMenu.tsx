@@ -18,7 +18,7 @@ const FilterMenu = () => {
   };
 
   return (
-    <div className="flex max-h-[40vh] pb-1">
+    <div className="flex lg:hidden max-h-[40vh] pb-1">
       
       <div className="w-32 pl-2 bg-teal-500 space-y-4 overflow-y-auto custom-scrollbar">
         <h2 className="text-lg font-bold text-gray-200 mb-2">Filter By</h2>

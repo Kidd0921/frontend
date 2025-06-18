@@ -10,7 +10,7 @@ interface ProductsListingProp {
 
 const ProductListing:React.FC<ProductsListingProp> = ({products}) => {
   return (
-    <div className="mt-12 mb-20 px-2 flex flex-wrap gap-x-8 gap-y-16 justify-between">
+    <div className="w-full mt-12 mb-20 px-4 flex flex-wrap gap-x-8 gap-y-16 justify-between">
       {
         products.map((product) => (
           <div
