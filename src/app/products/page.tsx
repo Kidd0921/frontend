@@ -1,5 +1,6 @@
 import { Product } from "@/types/product";
 import ProductListing from "@/components/products/ProductListing";
+import FilterMenu from "@/components/Filter/FilterMenu";
 
 const PRODUCT_PER_PAGE = 8;
 const  products: Product[] = [
@@ -56,7 +57,10 @@ const  products: Product[] = [
 ]
 const ListPage = () => {
   return (
-    <ProductListing products={products}/>
+    <>
+      <ProductListing products={products}/>
+    </>
+
   )
 }
 

@@ -17,13 +17,6 @@ const ProductListing:React.FC<ProductsListingProp> = ({products}) => {
             className="relative w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
             key={product.id}
           >
-            {/* Mobile full-cover Link */}
-            <Link
-              href="/test"
-              className="absolute inset-0 z-20 block sm:hidden"
-            >
-              {/* empty block just to cover */}
-            </Link>
             <div className="relative w-full h-80">
               <Link
                 href={"/test"}
