@@ -5,6 +5,7 @@ import Button from "./Button";
 import CartBadge from "./CartBadge";
 import { ShoppingCart, User, Filter } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { useSearchParams } from "next/navigation";
 
 type NavIconsProps = {
   setIsFilterOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,7 +15,10 @@ const NavIcons = ({ setIsFilterOpen }: NavIconsProps) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const isLoggedIn = false;
   const pathname = usePathname();
-  const showFilter = pathname === '/products';
+  const searchParams = useSearchParams();
+  const query = searchParams.get("q");
+
+  const showFilter = pathname === '/search' && !!query;
 
   const counter = 0;
   return (
