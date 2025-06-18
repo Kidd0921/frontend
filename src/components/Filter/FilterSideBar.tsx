@@ -1,11 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import RangeSlider from './RangeSlider';
 
 const FilterSideBar = () => {
   return (
-    <aside className="bg-teal-600 text-white p-4 w-auto space-y-8 overflow-y-auto max-h-screen custom-scrollbar">
+    <aside className="bg-teal-600 text-white p-4 w-auto space-y-8">
       {/* Category Filter */}
       <section>
         <h3 className="text-lg font-bold mb-2">Categories</h3>

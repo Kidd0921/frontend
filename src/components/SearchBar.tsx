@@ -1,16 +1,19 @@
 'use client';
 
 import { useRouter } from "next/navigation";
+import { useSearchStore } from "@/store/searchStore";
 
 const SearchBar = () => {
+  const { query, setQuery } = useSearchStore();
   const router = useRouter();
+  
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const productName = formData.get("productName") as string;
 
     if (productName) {
-      router.push(`/list?productName=${productName}`)
+      router.push(`/search?q=${encodeURIComponent(productName)}`);
     }
   };
 
@@ -21,11 +24,16 @@ const SearchBar = () => {
     >
       <input 
         type="text"
+        value={query}
         name="productName"
+        onChange={(e) => setQuery(e.target.value)}
         placeholder="Search"
         className="flex-1 bg-transparent outline-none" 
       />
-      <button className="cursor-pointer">
+      <button 
+        className="cursor-pointer"
+        type="submit"  
+      >
         <svg 
           className="h-5 w-5 text-teal-800"
           viewBox="0 0 24 24"

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { PanelLeftOpen, PanelLeftClose } from 'lucide-react';
 import { Product } from "@/types/product";
 import ProductListing from "@/components/products/ProductListing";
@@ -61,7 +62,9 @@ const  products: Product[] = [
     inStock: true,
   },
 ]
-const ListPage = () => {
+const SearchPage = () => {
+  const searchParams = useSearchParams();
+
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -104,4 +107,4 @@ const ListPage = () => {
   )
 }
 
-export default ListPage
+export default SearchPage

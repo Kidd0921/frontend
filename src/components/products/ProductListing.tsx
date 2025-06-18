@@ -17,7 +17,7 @@ const ProductListing:React.FC<ProductsListingProp> = ({products}) => {
             className="relative w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
             key={product.id}
           >
-            <div className="relative w-full h-80">
+            <div className="relative w-full h-80 overflow-hidden rounded-md group">
               <Link
                 href={"/test"}
               >
@@ -26,8 +26,15 @@ const ProductListing:React.FC<ProductsListingProp> = ({products}) => {
                   alt=""
                   fill
                   sizes="25vw"
-                  className="absolute object-cover rounded-md z-10"
+                  className="object-cover transition duration-500 ease-in-out group-hover:blur-sm"
                 />
+              </Link>
+
+              <Link 
+                className="absolute inset-0 flex items-center justify-center bg-teal-800 bg-opacity-70 text-white text-sm px-4 opacity-0 group-hover:opacity-100 transition duration-500"
+                href={"/test"}
+              >
+                <p className="text-center">{product.description}</p>
               </Link>
             </div>
             <Link
