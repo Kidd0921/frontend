@@ -5,7 +5,7 @@ import RatingStars from "@/components/RatingStars";
 import { ChevronDown } from 'lucide-react';
 
 interface ProductsListingProp {
-  products: Product[]; // example: 4.3
+  products: Product[];
 }
 
 const ProductListing:React.FC<ProductsListingProp> = ({products}) => {

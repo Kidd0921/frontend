@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from "react";
+import { PanelLeftOpen, PanelLeftClose } from 'lucide-react';
 import { Product } from "@/types/product";
 import ProductListing from "@/components/products/ProductListing";
-import { PanelLeftOpen, PanelLeftClose } from 'lucide-react';
+import Pagination from "@/components/Pagination";
 import FilterSideBar from "@/components/Filter/FilterSideBar";
 
-const PRODUCT_PER_PAGE = 8;
+
+const PRODUCTS_PER_PAGE = 4;
 const  products: Product[] = [
   {
     id: '1',
@@ -61,6 +63,11 @@ const  products: Product[] = [
 ]
 const ListPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);
+  const startIdx = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const currentProducts = products.slice(startIdx, startIdx + PRODUCTS_PER_PAGE);
 
   return (
     <div
@@ -80,7 +87,17 @@ const ListPage = () => {
         </div>
       )}
 
-      <ProductListing products={products} />
+      <div
+        className="w-full"  
+      >
+        <ProductListing products={currentProducts} />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
+      </div>
+
  
     </div>
 

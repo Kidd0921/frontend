@@ -2,6 +2,7 @@
 import SearchBar from "./SearchBar";
 import NavIcons from "./NavIcons";
 import FilterMenu from "./Filter/FilterMenu";
+import Link from "next/link";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -18,7 +19,10 @@ const Navbar = () => {
 
         {/* BIGGER SCREENS */}
         <div className="hidden md:flex items-center justify-between gap-8 h-full">
-          <div className="flex items-center flex-shrink-0 text-white mr-6">
+          <Link
+            href={"/"} 
+            className="flex items-center flex-shrink-0 text-white mr-6"
+          >
             <svg 
               className="fill-current h-8 w-8 mr-2"
               viewBox="0 -0.5 25 25" 
@@ -29,7 +33,7 @@ const Navbar = () => {
             <span className="font-semibold text-xl tracking-tight">
               Shoplicity
             </span>
-          </div>
+          </Link>
 
           <div className="w-1/2">
             <SearchBar/>
