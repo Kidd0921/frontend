@@ -15,7 +15,7 @@ const Footer = () => {
 
 
   return (
-    <div className={`fixed bottom-0 w-full py-4 z-10 bg-teal-600 text-white border-t border-zinc-200 shadow-lg sm:hidden`}>
+    <div className={`fixed bottom-0 w-full py-4 z-10 bg-teal-600 text-white border-t border-zinc-200 shadow-lg md:hidden`}>
       <div className="flex flex-row justify-around items-center bg-transparent w-full">
         {/* Back Button */}
         <Link href="/back" className="flex items-center">
