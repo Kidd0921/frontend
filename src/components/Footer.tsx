@@ -6,6 +6,7 @@ import { House, ChevronLeft, User } from 'lucide-react';
 import Button from "./Button";
 
 import useNavigation from "@/hook/useNavigation";
+import useScrollingEffect from "@/hook/useScrollingEffect";
 
 const Footer = () => {
   const {
@@ -13,9 +14,12 @@ const Footer = () => {
     isUserProfileActive
   } = useNavigation();
 
+  const scrollDirection = useScrollingEffect(); // Use the custom hook
+  const navClass = scrollDirection === 'up' ? '' : 'opacity-25 duration-500';
+
 
   return (
-    <div className={`fixed bottom-0 w-full py-4 z-10 bg-teal-600 text-white border-t border-zinc-200 shadow-lg md:hidden`}>
+    <div className={`fixed bottom-0 w-full py-4 z-10 bg-teal-600 text-white shadow-lg md:hidden ${navClass}`}>
       <div className="flex flex-row justify-around items-center bg-transparent w-full">
         {/* Back Button */}
         <Link href="/back" className="flex items-center">
