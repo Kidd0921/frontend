@@ -8,3 +8,9 @@ export interface Product {
   rating: number
   quantity: number
 }
+
+export interface ProductCategory {
+  id: string
+  name: string
+  image: string
+}
