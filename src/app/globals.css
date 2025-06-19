@@ -33,3 +33,12 @@ input[type="range"]::-moz-range-thumb {
   background: #14b8a6;
   cursor: pointer;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
